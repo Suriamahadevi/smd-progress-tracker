@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: #f9fafb;
+  color: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark body {
+  background: #05050a;
+  color: #e5e7eb;
+}
+
+.dark .glass-card {
+  background: rgba(15, 15, 26, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom scrollbars (dark, thin) */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
+/* Global input styling */
+input:not([type="range"]),
+textarea,
+select {
+  background: #f3f4f6;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  padding: 0.625rem 1rem; /* ~px-4 py-2.5 */
+  color: #111827;
+  font-size: 0.875rem; /* text-sm */
+  outline: none;
+  transition: all 200ms ease;
+}
+input::placeholder,
+textarea::placeholder {
+  color: rgba(17,24,39,0.25);
+}
+
+.dark input:not([type="range"]),
+.dark textarea,
+.dark select {
+  background: #16161f;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+input:not([type="range"]):focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(99, 102, 241, 0.6); /* indigo */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
