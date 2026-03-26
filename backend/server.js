@@ -22,14 +22,15 @@ app.use("/api/logs", logRoutes);
 
 const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
+});
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Backend running on port ${PORT}`);
-    });
+    console.log("MongoDB connected");
   })
   .catch((err) => {
     console.error("MongoDB connection failed:", err.message);
-    process.exit(1);
   });
